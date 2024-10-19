@@ -1,0 +1,25 @@
+services:
+  myyarpmock:
+    image: ${DOCKER_REGISTRY-}myyarpmock
+    build:
+      context: .
+      dockerfile: MyYarpMock/Dockerfile
+    ports:
+      - "81:8080"
+
+  mygatewayapi:
+    image: ${DOCKER_REGISTRY-}mygatewayapi
+    build:
+      context: .
+      dockerfile: MyGatewayApi/Dockerfile
+    ports:
+      - "82:8080"
+
+  appapi:
+    image: ${DOCKER_REGISTRY-}appapi
+    build:
+      context: .
+      dockerfile: AppApi/Dockerfile
+    ports:
+      - "83:8080"
+

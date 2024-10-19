@@ -1,0 +1,15 @@
+{
+  "profiles": {
+    "Docker Compose": {
+      "commandName": "DockerCompose",
+      "commandVersion": "1.0",
+      "composeLaunchAction": "None",
+      "composeLaunchServiceName": "myyarpmock",
+      "serviceActions": {
+        "myyarpmock": "StartDebugging",
+        "mygatewayapi": "StartDebugging",
+        "appapi": "StartDebugging"
+      }
+    }
+  }
+}

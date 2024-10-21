@@ -1,10 +1,8 @@
-
-GET {{HttpHostAddress}}/yarp
+GET {{HttpsHostAddress}}/sayHello/
 Accept: application/json
 
 ###
 
-GET {{HttpsHostAddress}}/yarp
-Accept: application/json
 
-###
+GET {{HttpHostAddress}}/sayHello/
+Accept: application/json

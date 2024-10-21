@@ -16,6 +16,12 @@ namespace MyGatewayApi
 
             var app = builder.Build();
 
+            app.MapGet("/sayHello", () =>
+            {
+                var x = 10;
+                return $"Gateway says: \"Hello, the time is {DateTime.Now}\"";
+            });
+
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {

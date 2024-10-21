@@ -15,6 +15,11 @@ namespace AppApi
             builder.Services.AddSwaggerGen();
 
             var app = builder.Build();
+            app.MapGet("/sayHello", () =>
+            {
+                var x = 10;
+                return $"App API says: \"Hello, the time is {DateTime.Now}\"";
+            });
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())

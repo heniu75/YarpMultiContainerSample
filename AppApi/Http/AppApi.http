@@ -7,3 +7,12 @@ GET {{HttpsHostAddress}}/apiForecast
 Accept: application/json
 
 ###
+
+GET {{HttpsHostAddress}}/sayHello/
+Accept: application/json
+
+###
+
+
+GET {{HttpHostAddress}}/sayHello/
+Accept: application/json

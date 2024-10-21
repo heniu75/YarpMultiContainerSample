@@ -17,10 +17,10 @@ namespace MyYarpMock
 
             var app = builder.Build();
 
-            app.MapGet("/yarp", () =>
+            app.MapGet("/sayHello", () =>
             {
                 var x = 10;
-                return $"Yarp time is {DateTime.Now}";
+                return $"Yarp says: \"Hello, the time is {DateTime.Now}\"";
             });
 
             app.MapReverseProxy();

@@ -6,7 +6,7 @@
     "Container (Dockerfile)": {
       "commandName": "Docker",
       "launchBrowser": true,
-      "launchUrl": "http://{ServiceHost}:51803/yarp",
+      "launchUrl": "http://{ServiceHost}:5005/yarp",
       // allows us to fine tune docker deployment
       "DockerfileRunArguments": "-p 5005:8080 -l mylabel=yarp",
       "environmentVariables": {

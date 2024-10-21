@@ -11,6 +11,9 @@ FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 USER app
 WORKDIR /app
 
+# no port for ssl as this image should be behind an ssl
+# enabled proxy / load balancer
+EXPOSE 8080
 
 # This stage is used to build the service project
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
@@ -47,6 +50,3 @@ WORKDIR /app
 COPY --from=publish /app/publish .
 ENTRYPOINT ["./MyYarpMock"]
 
-# no port for ssl as this image should be behind an ssl
-# enabled proxy / load balancer
-EXPOSE 8080

@@ -1,0 +1,9 @@
+GET {{HttpHostAddress}}/apiForecast
+Accept: application/json
+
+###
+
+GET {{HttpsHostAddress}}/apiForecast
+Accept: application/json
+
+###

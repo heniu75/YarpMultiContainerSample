@@ -1,0 +1,10 @@
+GET {{HttpsHostAddress}}/gatewayForecast/
+Accept: application/json
+
+###
+
+
+GET {{HttpHostAddress}}/gatewayForecast/
+Accept: application/json
+
+###

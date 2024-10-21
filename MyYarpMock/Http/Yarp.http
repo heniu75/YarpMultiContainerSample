@@ -1,0 +1,10 @@
+
+GET {{HttpHostAddress}}/yarp
+Accept: application/json
+
+###
+
+GET {{HttpsHostAddress}}/yarp
+Accept: application/json
+
+###

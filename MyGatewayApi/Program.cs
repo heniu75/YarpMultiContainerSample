@@ -27,7 +27,6 @@ namespace MyGatewayApi
 
             app.UseAuthorization();
 
-
             app.MapControllers();
 
             app.Run();

@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Primitives;
 
 namespace MyGatewayApi.Controllers
 {
@@ -16,6 +17,17 @@ namespace MyGatewayApi.Controllers
         public GatewayForecastController(ILogger<GatewayForecastController> logger)
         {
             _logger = logger;
+        }
+
+        [HttpGet("headers")]
+        public IActionResult ExtractFromBasic()
+        {
+            Dictionary<string, StringValues> headers = new();
+            foreach (var header in Request.Headers)
+            {
+                headers.Add(header.Key, header.Value);
+            }
+            return Ok(headers);
         }
 
         [HttpGet(Name = "GetWeatherForecast")]

@@ -4,9 +4,9 @@
       "commandName": "DockerCompose",
       "commandVersion": "1.0",
       "composeLaunchAction": "None",
-      "composeLaunchServiceName": "myyarpmock",
+      "composeLaunchServiceName": "yarpproxy",
       "serviceActions": {
-        "myyarpmock": "StartDebugging",
+        "yarpproxy": "StartDebugging",
         "mygatewayapi": "StartDebugging",
         "appapi": "StartDebugging"
       }

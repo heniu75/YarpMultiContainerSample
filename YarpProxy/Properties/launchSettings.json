@@ -8,7 +8,25 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "dotnetRunMessages": true,
-      "applicationUrl": "http://localhost:6006"
+      "applicationUrl": "http://localhost:7007"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker",
+      // allows us to fine tune docker deployment
+      "DockerfileRunArguments": "-p 7443:8081 -p 7007:8080 -l mylabel=gateway",
+      "launchBrowser": true,
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/swagger",
+      "environmentVariables": {
+        // environment variables inside docker
+        //"ASPNETCORE_HTTPS_PORTS": "8081",
+        //"ASPNETCORE_HTTP_PORTS": "8080",
+        //"DOCKER_ENV": "true"
+      },
+      // if you dont specify the port mappings, then this line will 
+      // ... automatically assign random ports to the ports inside the docker container
+      // ... so they become available outside of the container
+      "publishAllPorts": true,
+      "useSSL": true
     },
     "https": {
       "commandName": "Project",
@@ -18,25 +36,8 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "dotnetRunMessages": true,
-      "applicationUrl": "https://localhost:6443;http://localhost:6006"
-    },
-    "Container (Dockerfile)": {
-      "commandName": "Docker",
-      // allows us to fine tune docker deployment
-      "DockerfileRunArguments": "-p 6443:8081 -p 6006:8080 -l mylabel=gateway",
-      "launchBrowser": true,
-      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/swagger",
-      "environmentVariables": {
-        // environment variables inside docker
-        "ASPNETCORE_HTTPS_PORTS": "8081",
-        "ASPNETCORE_HTTP_PORTS": "8080",
-        "DOCKER_ENV": "true"
-      },
-      // if you dont specify the port mappings, then this line will 
-      // ... automatically assign random ports to the ports inside the docker container
-      // ... so they become available outside of the container
-      "publishAllPorts": true,
-      "useSSL": true
+      "applicationUrl": "https://localhost:7443;http://localhost:7007"
     }
-  }
+  },
+  "$schema": "http://json.schemastore.org/launchsettings.json"
 }
